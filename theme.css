@@ -1,0 +1,38 @@
+@import "default";
+@import "schema";
+@import "structure";
+
+@import url('https://fonts.cdnfonts.com/css/calibri'); 
+
+:root {
+  font-family: 'Calibri';
+  font-weight: normal;
+  font-size: 24pt;
+}
+
+section {
+  justify-content: flex-start;
+  line-height: 1.2;
+}
+
+section::after {
+  left: 30px;
+  right: auto;
+  font-size: 10pt;
+}
+
+section.title {
+  justify-content: center;
+  line-height: 1.2;
+}
+
+section.title::after {
+  content: "XXXXXX";
+}
+
+footer {
+  font-size: 10pt;
+  left: auto;
+  right: 30px;
+}
+/* vim: set sts=2 sw=2 et */
