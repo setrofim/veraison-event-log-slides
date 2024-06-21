@@ -103,16 +103,16 @@ Cons:
 
 ## Option 3: log collected periodically from attester
 
-1. Attester is registered/enrolled with the Log Monitor (LM).
-    - LM is either a new Veraison node, or a services assumed by Veraison to
+1. Attester is registered/enrolled with the Log Manager (LM).
+    - LM is either a new Veraison node, or a service assumed by Veraison to
       exist elsewhere in the deployment.
 2.
     1. Attester sends the log to the LM either periodically or at specified
        points (e.g. after an update),
     2. or LM periodically polls the attester for log updates.
 3. Attestation flow between attester/RP and the verifier is unchanged. After
-   receiving the evidence, the verifier uses is it to identify a log and
-   requests it from the LM during the appraisal.
+   receiving the evidence, the verifier uses it to identify a log and requests
+   it from the LM during the appraisal.
 
 ---
 
@@ -140,13 +140,13 @@ Cons:
 ## Conclusion
 
 - For situations such live firmware update, where the log size is expected to
-  be small, we don't need to do anything apart form implementing an appropriate
+  be small, we don't need to do anything apart from implementing an appropriate
   scheme (Option 1).
 - Option 2 would require significant changes to both the protocol, and the
   internal verifier flow, however are potentially useful beyond support for
   event logs.
 - Option 3 is a significant departure from the present model assumed by
-  Veraison. It requires either crating or assuming the existence of additional
+  Veraison. It requires either creating or assuming the existence of additional
   infrastructure. If the former, then its a major increase of Veraison's scope;
   if the latter, we may need to add an additional set of interfaces to the
   external services (though can potentially be contained within a scheme).
