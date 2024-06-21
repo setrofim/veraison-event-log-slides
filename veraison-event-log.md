@@ -1,7 +1,7 @@
-<!-- 
+<!--
 class: invert
 _class: title invert
-footer: © 2024 Veraison Project 
+footer: © 2024 Veraison Project
 -->
 
 # Event Logs in Veraison
@@ -113,8 +113,6 @@ Cons:
 3. Attestation flow between attester/RP and the verifier is unchanged. After
    receiving the evidence, the verifier uses is it to identify a log and
    requests it from the LM during the appraisal.
-
-(Note: this is the approach taken by Keylime.)
 
 ---
 
