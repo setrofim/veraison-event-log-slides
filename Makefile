@@ -14,7 +14,7 @@ html: $(BASE_NAME).html
 pptx: $(BASE_NAME).pptx
 
 $(BASE_NAME).pdf: $(BASE_NAME).md images/*
-	marp $(BASE_NAME).md $(MARP_OPTS) --html --pdf --pdf-notes
+	marp $(BASE_NAME).md $(MARP_OPTS) --html --pdf --pdf-notes --pdf-outline
 
 $(BASE_NAME).html: $(BASE_NAME).md images/*
 	marp $(BASE_NAME).md $(MARP_OPTS) --html

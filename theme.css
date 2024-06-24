@@ -27,7 +27,7 @@ section.title {
 }
 
 section.title::after {
-  content: "XXXXXX";
+  content: "";
 }
 
 footer {
@@ -35,4 +35,10 @@ footer {
   left: auto;
   right: 30px;
 }
+
+
+ul ul li {
+	font-size: 20pt;
+}
+
 /* vim: set sts=2 sw=2 et */

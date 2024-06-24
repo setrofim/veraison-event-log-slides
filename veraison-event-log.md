@@ -57,13 +57,16 @@ Cons:
 
 ## Option 2: verifier requests log delta
 
-- Attester/RP sends evidence as before.
-- Verifier realises it needs additional data to complete evaluation, and
-  requests it from the attester/RP.
-    - At this point, if attester/RP has attested before, and the previous log was cached,
+- Attester/RP sends evidence as before, along with the hash of the log.
+- Verifier looks up the hash in its log cache
+    - If the exact hash is found in cache, the cache log is used to produce the
+      attestation result.
+    - If attester/RP has attested before, and the previous log was cached,
       the verifier can send the last (scheme-specific) point (timestamp, record
       number, etc) for which it has cached entries, and only require the
       attester/RP to send the delta.
+    - Otherwise, the verifier replies a nil log delta, indicating that the
+      entire log is needed.
 
 This would require:
 
@@ -113,6 +116,9 @@ Cons:
 3. Attestation flow between attester/RP and the verifier is unchanged. After
    receiving the evidence, the verifier uses it to identify a log and requests
    it from the LM during the appraisal.
+    - Optionally, if attester/RP sends a log hash along with the evidence, a
+      verifier-local cache can be used to avoid querying the LM if the hash
+      hasn't changed from prior attestation.
 
 ---
 
